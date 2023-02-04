@@ -9,7 +9,9 @@ The name of each file should be the article title converted to lowercase, with s
 
 ## Dependencies
 
-- [lowdown](https://kristaps.bsd.lv/lowdown/)
+- For HTML output:
+	- Make
+	- [lowdown](https://kristaps.bsd.lv/lowdown/)
 
 ## Quick Start
 
@@ -26,10 +28,10 @@ mkdir my_wiki
 cd my_wiki
 ```
 
-Copy the build script `build.sh` into your wiki.
+Copy the makefile into your wiki.
 
 ```
-cp ../vw/build.sh .
+cp ../vw/Makefile .
 ```
 
 Create and edit some markdown files.
@@ -42,7 +44,7 @@ vi md/home.md md/vw.md md/vim.md
 Compile to HTML.
 
 ```
-./build.sh
+make
 ```
 
 ## Navigation
