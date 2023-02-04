@@ -4,10 +4,9 @@
 - Consider using a Makefile to compile to HTML
 - Include custom CSS
 - Generate page title from first heading (`# Title`)
+- Case: convert `_` in Markdown filename to `-` in HTML filename
 - Header and footer
 	- Can be used to automatically link back to the home page
-- Vim bindings
-	- Insert/replace link for selected text
 - Arguments
 	- Markdown path (default: `md`)
 	- HTML path (default: `html`)
