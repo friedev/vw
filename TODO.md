@@ -1,0 +1,25 @@
+# TODO
+
+- Global script that doesn't need to be copied into each instance (`vw`)
+- Consider using a Makefile to compile to HTML
+- Include custom CSS
+- Generate page title from first heading (`# Title`)
+- Header and footer
+	- Can be used to automatically link back to the home page
+- Vim bindings
+	- Insert/replace link for selected text
+- Arguments
+	- Markdown path (default: `md`)
+	- HTML path (default: `html`)
+	- CSS stylesheet (default `style.css`)
+	- Spacing 
+- Config
+	- `.vw` file
+	- Default settings for arguments
+- Insights/utilities
+	- List incoming links
+	- List outgoing links
+- Refactoring
+	- Rename page
+	- Safely delete page
+- Automatic git commits
