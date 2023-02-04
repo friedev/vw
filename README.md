@@ -15,39 +15,30 @@ The name of each file should be the article title converted to lowercase, with s
 
 ## Quick Start
 
-Clone vw.
+Clone vw:
 
 ```
 git clone https://frie.dev/vw.git
 ```
 
-Create a new directory for your wiki.
+Create a new wiki by copying the example:
 
 ```
-mkdir my_wiki
+cp -r vw/example my_wiki
 cd my_wiki
 ```
 
-Copy the makefile into your wiki.
+Now you can create and edit articles in `md/` as you see fit.
 
-```
-cp ../vw/Makefile .
-```
-
-Create and edit some markdown files.
-
-```
-mkdir md
-vi md/home.md md/vw.md md/vim.md
-```
-
-Compile to HTML.
+To compile your wiki to HTML:
 
 ```
 make
 ```
 
-## Navigation
+You can now browse through the files in `html/` locally using a web browser, or publish them to a website.
+
+## Links
 
 To create links between pages, use the normal markdown syntax.
 
@@ -55,11 +46,15 @@ To create links between pages, use the normal markdown syntax.
 [vw](vw.md) is a tool for creating wikis.
 ```
 
+vw will translate each link to point to its corresponding HTML page when you run `make`.
+
+### Navigation
+
 Vim provides some useful built-in keybinds that you can use to navigate the wiki.
 To open a link in a new buffer, move the cursor over it and type `gf`.
 To open an external link in the proper program (like your browser), type `gx` instead.
 
-## Link Generation
+### Generation
 
 To speed up editing, you can use the following vim macro to insert the link corresponding to an article title.
 For example, if you typed `[My Article]`, running the macro would yield `[My Article](my_article.md)`.
