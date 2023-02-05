@@ -98,7 +98,7 @@ More details about setting these options can be found in comments in the makefil
 
 ### Helper Script
 
-vw includes a shell script (also named `vw`) which you can use to generate various insights about your wiki.
+vw includes a shell script (also named `vw`) which you can use to refactor your wiki and generate various insights.
 For more detailed help information, run `vw` with no arguments.
 For maximum usability, add `vw` to your path; for instance, you could copy it to `~/.local/bin` or `/usr/local/bin`.
 
