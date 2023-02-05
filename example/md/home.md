@@ -1,5 +1,7 @@
 # Home
 
-Welcome to the home page of this example wiki.
+Welcome to vw! 
+vw (vim wiki) is yet another system for maintaining a simple personal wiki using vim and markdown.
 
-Visit [Page 1](page_1.md)!
+To learn how to use vw, refer to the README.
+You can read it online [here](https://frie.dev/vw).
