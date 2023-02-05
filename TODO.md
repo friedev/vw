@@ -4,6 +4,9 @@
 	- Insights/utilities
 		- List incoming links
 		- List outgoing links
+		- Orphaned pages
+		- Dead links
+		- Missing images
 	- Refactoring
 		- Rename page
 		- Safely delete page
