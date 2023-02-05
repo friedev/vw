@@ -21,7 +21,8 @@ HTML_FILES = $(patsubst $(MD_DIR)/%,$(HTML_DIR)/%,$(MD_FILES:.md=.html))
 all: $(HTML_FILES)
 
 # html/article.html -> md/article.md
-$(HTML_FILES): $(HTML_DIR)/%.html: $(MD_DIR)/%.md $(HTML_DIR)
+$(HTML_FILES): $(HTML_DIR)/%.html: $(MD_DIR)/%.md
+	mkdir -p $(HTML_DIR)
 	TITLE=$$(\
 		head --lines=1 '$<'\
 		| grep '^#'\
@@ -37,9 +38,6 @@ $(HTML_FILES): $(HTML_DIR)/%.html: $(MD_DIR)/%.md $(HTML_DIR)
 		-m 'css:$(CSS_FILE)'\
 		-m "date:$$DATE"\
 		-o '$@'
-
-$(HTML_DIR):
-	mkdir -p $(HTML_DIR)
 
 .PHONY: clean
 clean:
