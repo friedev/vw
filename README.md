@@ -92,7 +92,9 @@ However, unlike a traditional wiki, you can also choose to group related changes
 vw includes a makefile which you can use to compile your wiki to HTML.
 This lets you browse your wiki locally with a web browser, or publish it to a website.
 You can customize this build process to your liking simply by editing the makefile.
-Options are included for common use cases, such as adding a CSS stylesheet.
+
+The makefile includes options for common use cases, such as adding a CSS stylesheet or a common header and footer.
+More details about setting these options can be found in comments in the makefile.
 
 ### Helper Script
 

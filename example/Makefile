@@ -1,5 +1,10 @@
 # Begin customizable options
-LOWDOWN_FLAGS=--out-standalone 
+LOWDOWN_FLAGS=--out-standalone --html-no-skiphtml --html-no-escapehtml
+
+# Make sure to use the --html-no-skiphtml and --html-no-escapehtml flags
+# If you want to include a custom <head>, remove --out-standalone
+HEADER_HTML=
+FOOTER_HTML=
 
 MD_DIR=md
 HTML_DIR=html
@@ -25,6 +30,7 @@ $(HTML_FILES): $(HTML_DIR)/%.html: $(MD_DIR)/%.md $(HTML_DIR)
 	DATE=$$(date --iso-8601);\
 	sed 's/\.md)/\.html)/g'\
 		< '$<'\
+		| cat $(HEADER_HTML) - $(FOOTER_HTML)\
 		| lowdown\
 		$(LOWDOWN_FLAGS)\
 		-m "title:$$TITLE"\
