@@ -35,10 +35,10 @@ Install the `vw` helper script:
 cp vw/vw ~/.local/bin
 ```
 
-Add the link generator macro to your vimrc:
+Add the "insert link" macro to your vimrc:
 
 ```sh
-echo "noremap <leader>i :normal! vi[yf]a(^[pa.md)^[vi(ugv:^U%s/\%V /_/g^Mgv^[^M" >> ~/.vimrc
+cat insert_link.vim >> ~/.vimrc
 ```
 
 Start tracking the history of your wiki's articles:
@@ -104,21 +104,13 @@ For maximum usability, add `vw` to your path; for instance, you could copy it to
 
 ### Link Generation
 
-To speed up editing, you can use the following vim macro to insert the link corresponding to an article title.
+To speed up editing, vw includes a vim macro that inserts the link corresponding to the article title under the cursor.
 For example, if you typed `[My Article]`, running the macro would yield `[My Article](my_article.md)`.
+To install it, append it to your vimrc.
 
+```sh
+cat insert_link.vim >> ~/.vimrc
 ```
-vi[yf]a(^[pa.md)^[vi(ugv:^U%s/\%V /_/g^Mgv^[^M
-```
-
-To save this macro to your vimrc with a custom keybinding:
-
-```vim
-noremap <leader>i :normal! vi[yf]a(^[pa.md)^[vi(ugv:^U%s/\%V /_/g^Mgv^[^M
-```
-
-**NOTE:** Every character pair starting with `^` (e.g. `^[`, `^M`) is an escape sequence.
-To retype them yourself in insert mode, do `<C-V><C-[>` for `^[` (for example).
 
 If you don't like this (admittedly disgusting) macro solution, check out the [vim-markdown-wiki](https://github.com/mmai/vim-markdown-wiki) plugin, which provides similar functionality in the form of a Vim script plugin.
 
