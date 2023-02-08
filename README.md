@@ -2,6 +2,8 @@
 
 vw (vim wiki) is yet another system for maintaining a simple personal wiki using vim and markdown.
 
+vw was made by [Aaron Friesen](https://frie.dev) for [CornHacks 2023](https://unlcornhacks.com), where it won 3rd place.
+
 ## Dependencies
 
 - To compile to HTML:
@@ -22,10 +24,9 @@ Create a new wiki by copying the example:
 
 ```
 cp -r vw/example my_wiki
-cd my_wiki
 ```
 
-Now you can create and edit articles in `md/` as you see fit.
+Now you can create and edit articles in `my_wiki/md/` as you see fit.
 
 ### Extras
 
@@ -38,20 +39,19 @@ cp vw/vw ~/.local/bin
 Add the "insert link" macro to your vimrc:
 
 ```sh
-cat insert_link.vim >> ~/.vimrc
+cat vw/insert_link.vim >> ~/.vimrc
 ```
 
 Start tracking the history of your wiki's articles:
 
 ```
-git init
+git init my_wiki
 ```
-
 
 Compile your wiki to HTML:
 
 ```
-make
+make -C my_wiki
 ```
 
 ## Architecture
@@ -111,14 +111,15 @@ For example, if you typed `[My Article]`, running the macro would yield `[My Art
 To install it, append it to your vimrc.
 
 ```sh
-cat insert_link.vim >> ~/.vimrc
+cat vw/insert_link.vim >> ~/.vimrc
 ```
 
-If you don't like this (admittedly disgusting) macro solution, check out the [vim-markdown-wiki](https://github.com/mmai/vim-markdown-wiki) plugin, which provides similar functionality in the form of a Vim script plugin.
+Alternatively, check out [vim-markdown-wiki](https://github.com/mmai/vim-markdown-wiki), which provides similar functionality in the form of a Vim script plugin.
+Note that, by default, vim-markdown-wiki replaces spaces with hyphens rather than underscores.
 
 ### Import from TiddlyWiki
 
-To convert a TiddlyWiki to a vw wiki, you can use the included `tiddlers_to_vw.py` script.
+To convert a TiddlyWiki to a vw wiki, you can use the included Python script: `tiddlers_to_vw.py`.
 The converter doesn't handle all of TiddlyWiki's features, but it should still save you time compared to manual conversion.
 
 ## Alternatives
